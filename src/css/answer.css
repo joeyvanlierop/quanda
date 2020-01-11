@@ -1,0 +1,27 @@
+.answer-card {
+    flex-direction: column;
+}
+
+.answer-card > * {
+    margin: 1rem 0;
+}
+
+.answer-question {
+    width: 100%;    
+}
+
+.answer-question p {
+    font-family: 'Montserrat';
+    font-size: 1.5rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+    width: 100%;
+    color: #595959;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.answer-input {
+    width: 100%;
+}

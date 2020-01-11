@@ -1,6 +1,20 @@
-let askInput = document.getElementById("ask-input");
-let askCheck = document.getElementById("ask-check");
+import autosize, { update } from 'autosize';
+import '../css/stylesheet.css';
+import '../css/navbar.css';
+import '../css/ask.css';
+import '../css/answer.css';
+import '../css/normalize.css';
 
+// Ask card components
+let askInput = document.getElementsByClassName("ask-input")[0];
+let askCheck = document.getElementsByClassName("ask-check")[0];
+autosize(askInput);
+
+// Answer card components
+let answerInput = document.getElementsByClassName("answer-input");
+autosize(answerInput);
+
+// Navbar Components
 let askButton = document.getElementById("ask");
 let answerButton = document.getElementById("answer");
 let archiveButton = document.getElementById("archive");
@@ -14,12 +28,17 @@ function changeSelected(event) {
     event.currentTarget.classList.add("selected");
 }
 
-function submitInput(event) {
+// Submits a question
+// The question must end with a question mark
+function submitQuestion(event) {
     if(event.key === "Enter") {
         if(validInput()) {
             console.log(askInput.value);
             askInput.value = "";
+            update(askInput);
         }
+
+        event.returnValue = false;
     }
 }
 
@@ -40,4 +59,4 @@ buttonList.forEach((button) =>
 );
 
 askInput.addEventListener("keyup", validateInput);
-askInput.addEventListener("keypress", submitInput);
+askInput.addEventListener("keypress", submitQuestion);

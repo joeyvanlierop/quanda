@@ -1,0 +1,11 @@
+html, body {
+    font-family: 'Josefin Sans';
+    height: 100%;
+    background-color: #fdfdfd;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
