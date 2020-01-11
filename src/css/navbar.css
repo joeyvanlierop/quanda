@@ -7,7 +7,7 @@
 
 #nav-left p {
     font-size: 2.5rem;
-    font-weight: bolder;
+    font-weight: 700;
     margin: 0;
 }
 
@@ -25,7 +25,7 @@
 #nav-right p {
     transition: all 150ms ease-out;
     font-size: 1.1rem;
-    font-weight: bolder;
+    font-weight: 700;
     text-transform: uppercase;
     color: black;
     padding: 0.5rem 1.25rem;
@@ -38,16 +38,16 @@
     opacity: 70%;
 }
 
-#nav-right button:hover{
-    transform: scale(1.075);
+#nav-right button:hover {
+    transform: scale(1.1);
 }
 
-#nav-right button { 
+#nav-right button {
     transition: all 150ms ease-out;
-    border: 0.15rem transparent solid;
+    border: 0.15rem rgba(0, 0, 0, 0.05) solid;
     border-radius: 2rem;
 }
 
-#nav-right button.selected { 
+#nav-right button.selected {
     border: 0.15rem black solid;
 }
