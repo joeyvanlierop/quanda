@@ -1,0 +1,103 @@
+html, body {
+    font-family: 'Josefin Sans';
+    height: 100%;
+    background-color: #fdfdfd;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+
+#top-bar-left p {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    margin: 0;
+}
+
+#top-bar-right {
+    display: flex;
+}
+
+#top-bar-right a {
+    text-decoration: none;
+    padding: 0.5rem 1.25rem;
+    margin: 0 0.75rem;
+}
+
+#top-bar-right p {
+    transition: all 150ms ease-out;
+    font-size: 1.1rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: black;
+    padding: 0;
+    margin: 0;
+}
+
+#top-bar-right a:not(.selected) p {
+    color: orangered;
+    opacity: 70%;
+}
+
+#top-bar-right p:hover{
+    transform: scale(1.15);
+}
+
+#top-bar-right a { 
+    transition: all 150ms ease-out;
+    border: 0.15rem transparent solid;
+    border-radius: 2rem;
+}
+
+#top-bar-right a.selected { 
+    border: 0.15rem black solid;
+}
+
+#ask-container {
+    height: 50%;
+}
+
+#ask-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 5rem;
+    -webkit-box-shadow: 0px 20px 50px -25px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 20px 50px -25px rgba(0,0,0,0.75);
+    box-shadow: 0px 20px 50px -25px rgba(0,0,0,0.75);
+    padding: 1rem 2rem;
+    width: 70%;
+}
+
+#ask-input {
+    font-family: "Montserrat";
+    font-size: 2rem;
+    font-weight: bold;
+    width: 95%;
+    border: none;
+    background: transparent
+}
+
+#ask-input:focus{
+    outline: none;
+}
+
+#ask-check {
+    transition: all 200ms ease-out;
+    font-size: 3rem;
+    color: grey;
+}
+
+.valid-ask {
+    color: yellowgreen !important;
+}
