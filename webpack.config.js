@@ -7,7 +7,7 @@ module.exports = {
      *
      * The first place Webpack looks to start building the bundle.
      */
-    entry: './src/js/index.js',
+    entry: './src/app.jsx',
 
     /**
      * Output
@@ -16,7 +16,7 @@ module.exports = {
      */
     output: {
         path: path.join(__dirname, './dist'),
-        filename: '[name].bundle.js',
+        filename: 'bundle.js',
     },
 
     /**
@@ -49,7 +49,7 @@ module.exports = {
              * Use Babel to transpile JavaScript files.
              */
             {
-                test: /\.js$/,
+                test: /\.(js|jsx)$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {
                     loader: 'babel-loader',

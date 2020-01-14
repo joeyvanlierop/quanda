@@ -1,4 +1,4 @@
-.ask-card, .answer-card {
+.ask-card, .answer-card, .answered-card {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -12,11 +12,14 @@
     width: 70%;
 }
 
-.ask-input, .answer-input {
-    font-family: "Montserrat";
+.ask-input {
     font-size: 1.8rem;
     font-weight: bold;
     width: 95%;
+}
+
+.ask-input, .answer-input, .answered-card {
+    font-family: "Montserrat";
     border: none;
     resize: none;
     background: transparent
