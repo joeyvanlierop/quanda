@@ -4,27 +4,42 @@ import TextareaAutosize from 'react-autosize-textarea';
 class AskInputComponent extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { value: "" };
 
-        this.validateInput = this.validateInput.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.handleKeyDown = this.handleKeyDown.bind(this);
     }
-    
-    validateInput(event) {
-        this.setState({value: event.target.value});
-        
-        if (event.target.value.slice(-1) === "?") {
-            console.log("Valid");
-        } else {
-            console.log("Invalid");
+
+    // Calls the validateInput function
+    handleChange(event) {
+        this.props.validateInput(event.target.value);
+    }
+
+    // Checks if the enter key was pressed without the shift key
+    //   - If it was, then it calls the submitInput function and prevents any more input
+    handleKeyDown(event) {
+        const submitInput = this.props.submitInput;
+        const value = this.props.value;
+        const valid = this.props.valid;
+
+        if(event.key == "Enter" && event.shiftKey == false) {
+            submitInput();
+            event.preventDefault();
         }
     }
 
     render() {
+        const value = this.props.value;
         const placeholder = "Ask a question";
         const className = "ask-input";
 
         return (
-            <TextareaAutosize rows={1} value={this.state.value} className={className} placeholder={placeholder} onChange={this.validateInput} />
+            <TextareaAutosize
+                rows={1}
+                value={value}
+                className={className}
+                placeholder={placeholder}
+                onChange={this.handleChange}
+                onKeyDown={this.handleKeyDown} />
         );
     };
 }

@@ -62,3 +62,10 @@
     visibility: visible;
     opacity: 50%;
 }
+
+.submitButton {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+}
