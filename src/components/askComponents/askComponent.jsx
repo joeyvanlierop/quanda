@@ -1,4 +1,5 @@
 import React from "react";
+import { uploadQuestion } from "../../js/databaseHelper.js";
 import AskInputComponent from "./askInputComponent.jsx";
 import TooltipComponent from "../tooltipComponents/tooltipComponent.jsx";
 
@@ -27,7 +28,8 @@ class AskComponent extends React.Component {
         const valid = this.state.valid;
 
         if(this.state.valid) {
-            console.log(this.state.value)
+            console.log(this.state.value);
+            uploadQuestion(this.state.value);
             this.setState({ value: "", valid: false });
         }
     }

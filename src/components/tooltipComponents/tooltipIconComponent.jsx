@@ -7,7 +7,7 @@ class TooltipIconComponent extends React.Component {
         const icon = this.props.icon;
         const iconClassName = this.props.iconClassName;
         const validClassName = this.props.validClassName;
-        const className = `material-icons ${iconClassName} ${valid ? validClassName : ""}`;
+        const className = `material-icons-round ${iconClassName} ${valid ? validClassName : ""}`;
 
         return (
             <i className={className} onClick={onClickCallback}>
