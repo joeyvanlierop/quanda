@@ -1,9 +1,9 @@
 import React from "react";
 
-class AskTooltipTextComponent extends React.Component {
+class TooltipTextComponent extends React.Component {
     render() {
         const valid = this.props.valid;
-        const text = "Add a question mark to submit";
+        const text = this.props.text;
         const className = "tooltiptext";
 
         if(valid) {
@@ -18,4 +18,4 @@ class AskTooltipTextComponent extends React.Component {
     }
 }
 
-export default AskTooltipTextComponent;
+export default TooltipTextComponent;

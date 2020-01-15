@@ -6,6 +6,13 @@
     margin: 1rem 0;
 }
 
+.answer-card-response {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .answer-question {
     font-family: "Montserrat";
     font-size: 1.8rem;
@@ -24,4 +31,15 @@
     font-size: 1.5rem;
     color: #404040;
     width: 100%;
+}
+
+.submit-send {
+    transition: all 200ms ease-out;
+    font-size: 3rem;
+    color: grey;
+}
+
+.submit-send-valid {
+    cursor: pointer;
+    color: cornflowerblue;
 }

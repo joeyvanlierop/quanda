@@ -1,5 +1,5 @@
 import React from "react";
-import AskCheckmarkComponent from "./askCheckmarkComponent.jsx";
+import AskCheckmarkComponent from "./tooltipIconComponent.jsx/index.js.js";
 import AskTooltipTextComponent from "./askTooltipTextComponent.jsx";
 
 class AskTooltipComponent extends React.Component {

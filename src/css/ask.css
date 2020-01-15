@@ -29,17 +29,6 @@
     outline: none;
 }
 
-.ask-check {
-    transition: all 200ms ease-out;
-    font-size: 3rem;
-    color: grey;
-}
-
-.valid-ask {
-    cursor: pointer;
-    color: yellowgreen !important;
-}
-
 .tooltip {
     font-size: 0;
 }
@@ -63,9 +52,13 @@
     opacity: 50%;
 }
 
-.submitButton {
-    background-color: transparent;
-    border: none;
-    outline: none;
-    padding: 0;
+.submit-checkmark {
+    transition: all 200ms ease-out;
+    font-size: 3rem;
+    color: grey;
+}
+
+.submit-checkmark-valid {
+    cursor: pointer;
+    color: yellowgreen;
 }

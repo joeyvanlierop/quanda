@@ -17,12 +17,8 @@ class AskInputComponent extends React.Component {
     // Checks if the enter key was pressed without the shift key
     //   - If it was, then it calls the submitInput function and prevents any more input
     handleKeyDown(event) {
-        const submitInput = this.props.submitInput;
-        const value = this.props.value;
-        const valid = this.props.valid;
-
         if(event.key == "Enter" && event.shiftKey == false) {
-            submitInput();
+            this.props.submitInput();
             event.preventDefault();
         }
     }

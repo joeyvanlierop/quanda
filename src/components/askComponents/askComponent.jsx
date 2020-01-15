@@ -1,6 +1,6 @@
 import React from "react";
 import AskInputComponent from "./askInputComponent.jsx";
-import AskTooltipComponent from "./askTooltipComponent.jsx";
+import TooltipComponent from "../tooltipComponents/tooltipComponent.jsx";
 
 class AskComponent extends React.Component {
     constructor(props) {
@@ -12,7 +12,7 @@ class AskComponent extends React.Component {
     };
 
     // Updates the current value state to the given input
-    // Sets the value state to true if the given input ends with a question mark 
+    // Sets the valid state to true if the given input ends with a question mark 
     validateInput(input) {
         if (input.slice(-1) === "?") {
             this.setState({ value: input, valid: true });
@@ -37,7 +37,11 @@ class AskComponent extends React.Component {
         const cardClassName = "ask-card centered";
         const value = this.state.value;
         const valid = this.state.valid;
-
+        const icon = `check_circle_outline`;
+        const iconClassName = "submit-checkmark";
+        const validClassName = "submit-checkmark-valid";
+        const text = "Add a question mark to submit";
+        
         return (
             <div className={containerClassName}>
                 <div className={cardClassName}>
@@ -47,9 +51,13 @@ class AskComponent extends React.Component {
                         value={value}
                         valid={valid} />
 
-                    <AskTooltipComponent
-                        submitInput={this.submitInput}
-                        valid={valid} />
+                    <TooltipComponent
+                        onClickCallback={this.submitInput}
+                        valid={valid}
+                        icon={icon}
+                        iconClassName={iconClassName}
+                        validClassName={validClassName}
+                        text={text} />
                 </div>
             </div>
         );
