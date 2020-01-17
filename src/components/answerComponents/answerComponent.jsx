@@ -6,7 +6,7 @@ import TooltipComponent from "../tooltipComponents/tooltipComponent.jsx";
 class AnswerComponent extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { value: "", valid: false };
+        this.state = { questionObject: undefined, value: "", valid: false };
 
         this.validateInput = this.validateInput.bind(this);
         this.submitInput = this.submitInput.bind(this);
@@ -34,7 +34,7 @@ class AnswerComponent extends React.Component {
     }
     
     render() {
-        const containerClassName = "centered";
+        const containerClassName = "answer-container centered";
         const cardClassName = "answer-card centered";
         const cardReponseClaseName = "answer-card-response";
         const value = this.state.value;

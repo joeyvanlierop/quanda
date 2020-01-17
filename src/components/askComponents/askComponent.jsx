@@ -35,7 +35,7 @@ class AskComponent extends React.Component {
     }
 
     render() {
-        const containerClassName = "centered";
+        const containerClassName = "ask-container centered";
         const cardClassName = "ask-card centered";
         const value = this.state.value;
         const valid = this.state.valid;

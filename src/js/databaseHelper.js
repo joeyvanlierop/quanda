@@ -3,21 +3,21 @@ import { unansweredDatabase, answeredDatabase } from "./database";
 // Returns a random question from the firebase realtime database
 function getNewestQuestion() {
     return unansweredDatabase.orderByChild("date").limitToFirst(1).once('value').then(snapshot => {
-        let question;
+        let questionData;
         
         snapshot.forEach(questionSnapshot => {
             let key = questionSnapshot.key;
-            let questionText = questionSnapshot.val().question;
+            let question = questionSnapshot.val().question;
             
-            if (questionText != undefined) {
+            if (question != undefined) {
                 renewQuestion(key);
-                question = questionText;
+                questionData = { key, question };
             } else {
-                question = "There are no questions to answer :(";
+                questionData = undefined;
             }
         });
 
-        return question;
+        return questionData;
     });
 }
 

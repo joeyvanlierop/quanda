@@ -10,7 +10,7 @@ class AnsweredComponent extends React.Component {
         return (
             <div className={containerClassName}>
                 <div className={cardClassName}>
-                    <AnswerQuestionComponent />
+                    {/* <AnswerQuestionComponent /> */}
                     <AnsweredResponseComponent />
                 </div>
             </div>

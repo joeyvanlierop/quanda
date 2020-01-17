@@ -15,8 +15,11 @@ class AnswerQuestionComponent extends React.Component {
 
                     <Async.Fulfilled>
                         { data => {
-                            console.log(data);
-                            return data; 
+                            if(data) {
+                                return data.question; 
+                            } else {
+                                return "There are no more questions to answer"
+                            }
                         }}
                     </Async.Fulfilled>
 

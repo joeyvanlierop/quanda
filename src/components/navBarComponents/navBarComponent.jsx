@@ -5,20 +5,21 @@ import NavButtonComponent from "./navButtonComponent.jsx";
 class NavBarComponent extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { selected: "ask" };
 
-        this.setSelected = this.setSelected.bind(this);
+        this.setIndex = this.setIndex.bind(this);
     }
 
-    setSelected(id) {
-        this.setState({ selected: id });
+    setIndex(index) {
+        this.props.setIndex(index);
     }
-    
+
     render() {
+        const currentIndex = this.props.currentIndex;
+        const setIndex = this.setIndex;
         const navButtonProps = [
-            { id: "ask", text: "Ask", selected: this.state.selected, setSelected: this.setSelected },
-            { id: "answer", text: "Answer", selected: this.state.selected, setSelected: this.setSelected },
-            { id: "archive", text: "Archive", selected: this.state.selected, setSelected: this.setSelected },
+            { id: "ask", text: "Ask", index: 0, currentIndex: currentIndex, setIndex: setIndex },
+            { id: "answer", text: "Answer", index: 1, currentIndex: currentIndex, setIndex: setIndex },
+            { id: "archive", text: "Archive", index: 2, currentIndex: currentIndex, setIndex: setIndex },
         ];
         const titleText = "Quanda";
         const wrapperId = "nav-wrapper";
